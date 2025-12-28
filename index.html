@@ -1,53 +1,268 @@
 <!DOCTYPE html>
-<html lang="en"> <head>  
-  <meta charset="UTF-8" />   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />   <title>EventHub | Official Website</title> 
-  <style>     * { box-sizing: border-box; margin: 0; padding: 0; }  
-    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; } 
-    header { background: #0f766e; color: #fff; position: sticky; top: 0; z-index: 1000; }   
-    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px; }   
-    nav a { color: #fff; text-decoration: none; margin-left: 18px; font-weight: bold; }  
-    nav a:hover { text-decoration: underline; }  
-    section { padding: 70px 20px; max-width: 1200px; margin: auto; }    
-    .hero { text-align: center; padding: 100px 20px; background: #ecfeff; }     
-    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }   
-    .hero p { font-size: 1.2rem; }   
-    .btn { display: inline-block; background: #0f766e; color: #fff; padding: 12px 20px; border-radius: 6px; text-decoration: none; margin-top: 15px; }  
-    .btn:hover { background: #115e59; }    
-    h2 { margin-bottom: 25px; font-size: 2rem; text-align: center; }  
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }  
-    .card { background: #fff; border-radius: 10px; padding: 22px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }  
-    .card:hover { transform: translateY(-5px); }     .team img { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 10px; }  
-    .team .card { text-align: center; }     .about p { margin-bottom: 15px; text-align: justify; }   
-    form { max-width: 600px; margin: auto; }  
-    input, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 6px; border: 1px solid #ccc; }    
-    footer { background: #111827; color: #fff; text-align: center; padding: 25px; }   </style> </head> <body><header>   <nav>     <h2>EventHub</h2>     <div>   
-      <a href="#home">Home</a>    
-      <a href="#events">Events</a>     
-      <a href="#team">Team</a>  
-      <a href="#about">About</a>   
-      <a href="#contact">Contact</a> 
-    </div>   </nav> </header><!-- Home --><section id="home" class="hero">  
-      <h1>Welcome to EventHub</h1>   <p>Connecting people through knowledge, events, and innovation.</p>
-      <a href="#events" class="btn">Explore Events</a> </section><!-- Events --><section id="events"> 
-        <h2>Upcoming Events</h2>   <div class="grid">     <div class="card">       <h3>Web Development Workshop</h3>  
-          <p><strong>Date:</strong> 15 January 2026</p>       <p><strong>Venue:</strong> Community Hall</p>    
-          <p>Hands-on training on HTML, CSS, and basics of JavaScript.</p>     </div>     <div class="card">     
-            <h3>Science Exhibition</h3>       <p><strong>Date:</strong> 10 February 2026</p>  
-            <p><strong>Venue:</strong> City School Campus</p>       <p>Innovative science projects presented by students.</p> 
-          </div>     <div class="card">       <h3>Career Guidance Seminar</h3>       <p><strong>Date:</strong> 5 March 2026</p>    
-            <p><strong>Venue:</strong> Main Auditorium</p>       <p>Expert guidance on careers after school and college.</p> 
-          </div>   </div> </section><!-- Team --><section id="team">   <h2>Meet the Team</h2>   <div class="grid team"> 
-            <div class="card">       <img src="https://via.placeholder.com/120" alt="Member">       <h3>Aarav Patel</h3>  
-              <p>Event Coordinator</p>     </div>     <div class="card">      
-                <img src="https://via.placeholder.com/120" alt="Member">    
-                <h3>Neha Sharma</h3>       <p>Marketing Head</p>     </div>   
-            <div class="card">       <img src="https://via.placeholder.com/120" alt="Member">  
-              <h3>Rohit Verma</h3>       <p>Technical Lead</p>     </div>   </div> 
-          </section><!-- About --><section id="about" class="about">   <h2>About Us</h2>  
-            <p>EventHub is an educational and community-based initiative aimed at organizing meaningful events such as workshops, exhibitions, and seminars.</p>   <p>Our goal is to promote practical learning, teamwork, and innovation among students and professionals.</p>   <p>This platform helps participants stay informed about upcoming events and understand the team working behind the scenes.</p>
-          </section><!-- Contact --><section id="contact">   <h2>Contact Us</h2>   <form>    
-            <input type="text" placeholder="Your Name" required>     <input type="email" placeholder="Your Email" required>   
-            <textarea rows="4" placeholder="Your Message" required></textarea>     <button class="btn" type="submit">Send Message</button>
-          </form> </section><footer>   <p>© <span id="year"></span> EventHub | College Project</p> </footer><script>   // Smooth scroll   document.querySelectorAll('a[href^="#"]').forEach(anchor => {     anchor.addEventListener('click', function(e) {       e.preventDefault();       document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });     });   });  
-  // Dynamic year   document.getElementById('year').textContent = new Date().getFullYear(); </script></body> </html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Code Vimarsh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --light-bg: linear-gradient(135deg, orange, red, yellow);
+  --dark-bg: #0f172a;
+  --light-card: rgba(255,255,255,0.9);
+  --dark-card: #1e293b;
+  --light-text: #111;
+  --dark-text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  transition: 0.5s;
+}
+
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  margin: 0 12px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.bulb img {
+  width: 40px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.bulb img:hover {
+  transform: scale(1.1);
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--light-card);
+  transition: 0.5s;
+}
+
+body.dark .card {
+  background: var(--dark-card);
+}
+
+.team li {
+  list-style: none;
+  padding: 8px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+form button {
+  background: orange;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background: red;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
+
+.social a {
+  margin: 0 12px;
+  font-size: 26px;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: orange;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2><i class="fa-solid fa-code"></i> Code Vimarsh</h2>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#workspace">Workspace</a>
+    <a href="#team">Team</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Bulb Toggle -->
+  <div class="bulb">
+    <img src="https://i.imgur.com/yb5K7bE.png" id="bulb" onclick="toggleMode()">
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home">
+  <h1>Welcome to Code Vimarsh</h1>
+  <p style="text-align:center;font-size:18px;">
+    Learn • Build • Innovate • Grow Together
+  </p>
+  <div class="home-content">
+    <img src="images/code-vimarsh-logo.png" alt="Code Vimarsh Logo" class="logo">
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <h2><i class="fa-solid fa-calendar-days"></i> Events</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Guidance for DSA Foundation</h3>
+      <p>Strong fundamentals for coding interviews and problem solving.</p>
+    </div>
+    <div class="card">
+      <h3>Fireside Chat</h3>
+      <p>Interactive talks with developers and mentors.</p>
+    </div>
+    <div class="card">
+      <h3>Upcoming Events</h3>
+      <p>Hackathons, coding contests and workshops.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSPACE -->
+<section id="workspace">
+  <h2><i class="fa-solid fa-laptop-code"></i> Workspace</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Innovation Showcase</h3>
+      <p>Creative coding projects and solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Learning Resources</h3>
+      <p>Notes, practice sets and project guidance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <h2><i class="fa-solid fa-users"></i> Our Team</h2>
+  <ul class="team">
+    <li>Mann Shah</li>
+    <li>Dhriti Gandhi</li>
+    <li>Kavya Patel</li>
+    <li>Het Patel</li>
+    <li>Shiv From</li>
+    <li>Ansh Mistry</li>
+  </ul>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2><i class="fa-solid fa-circle-info"></i> About Us</h2>
+  <div class="card">
+    <p>
+      Elevate your programming skills, tackle exciting challenges and explore
+      the endless possibilities of coding with Code Vimarsh.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <footer>
+    <div class="social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p>© 2025 Code Vimarsh</p>
+  </footer>
+</section>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("dark");
+  const bulb = document.getElementById("bulb");
+  if (document.body.classList.contains("dark")) {
+    bulb.src = "https://i.imgur.com/9YF4F9y.png"; // bulb off
+  } else {
+    bulb.src = "https://i.imgur.com/yb5K7bE.png"; // bulb on
+  }
+}
+</script>
+
+</body>
+</html>
